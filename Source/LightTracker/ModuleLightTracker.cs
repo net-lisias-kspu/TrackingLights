@@ -71,8 +71,8 @@ namespace LightTracker
         {
             // Initialize lights to use custom values saved from KSP fields
 
-            var unitylight = part.GetComponentInChildren<Light>();
-            var lightColor = new Color
+            Light unitylight = part.GetComponentInChildren<Light>();
+            Color lightColor = new Color
             {
                 r = RColorField * IntensityField,
                 g = GColorField * IntensityField,
@@ -84,7 +84,7 @@ namespace LightTracker
 
 
             // Disable stock UI elements that are unnecessary from ModuleAnimateGeneric... assuming mouse will be used instead
-            foreach (var module in part.FindModulesImplementing<ModuleAnimateGeneric>())
+            foreach (ModuleAnimateGeneric module in part.FindModulesImplementing<ModuleAnimateGeneric>())
             {
                 module.Fields["actionGUIName"].guiActive = false;
                 module.Fields["startEventGUIName"].guiActive = false;
@@ -213,13 +213,13 @@ namespace LightTracker
             // In flight logic, no symmetry
             if (!HighLogic.LoadedSceneIsEditor)
             {
-                var lightColor = new Color
+                Color lightColor = new Color
                 {
                     r = RColorField * IntensityField,
                     g = GColorField * IntensityField,
                     b = BColorField * IntensityField
                 };
-                var unitylight = part.GetComponentInChildren<Light>();
+                Light unitylight = part.GetComponentInChildren<Light>();
                 unitylight.range = 100 * (float)Math.Pow(RangeField, RangeField);
                 unitylight.color = lightColor;
                 unitylight.spotAngle = ConeAngleField;
@@ -228,15 +228,15 @@ namespace LightTracker
             // Handle Symmetry in editor
             else
             {
-                var modulelight = part.FindModuleImplementing<ModuleLight>();
+                ModuleLight modulelight = part.FindModuleImplementing<ModuleLight>();
 
-                var lightColor = new Color
+                Color lightColor = new Color
                 {
                     r = modulelight.lightR * IntensityField,
                     g = modulelight.lightG * IntensityField,
                     b = modulelight.lightB * IntensityField
                 };
-                var unitylight = part.GetComponentInChildren<Light>();
+                Light unitylight = part.GetComponentInChildren<Light>();
                 unitylight.range = 100 * (float)Math.Pow(RangeField, RangeField);
                 unitylight.color = lightColor;
                 unitylight.spotAngle = ConeAngleField;
@@ -244,9 +244,9 @@ namespace LightTracker
                 GColorField = modulelight.lightG;
                 BColorField = modulelight.lightB;
 
-                foreach (var part in part.symmetryCounterparts)
+                foreach (Part part in part.symmetryCounterparts)
                 {
-                    var lighttrackermodule = part.FindModuleImplementing<ModuleLightTracker>();
+                    ModuleLightTracker lighttrackermodule = part.FindModuleImplementing<ModuleLightTracker>();
                     unitylight = part.GetComponentInChildren<Light>();
                     unitylight.range = 100 * (float)Math.Pow(RangeField, RangeField);
                     unitylight.color = lightColor;
