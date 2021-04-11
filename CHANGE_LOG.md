@@ -1,5 +1,14 @@
 # Tracking Lights :: Change Log
 
+* 2020-0320: 0.0.2 (linuxgurugamer) for KSP 1.9.1
+	+ Adoption by Linuxgurugamer
+	+ Added AssemblyVerison.tt
+	+ Added InstallChecker.cs
+	+ Added Changelog.txt
+	+ Added .version file
+	+ Rebuilt for 1.8/1.9
+	+ Added tags to parts
+	+ Updated tags in MM-CCK-Lights.cfg patch
 * 2019-0512: 1.0 (Trolllception) for KSP 1.7.0
 	+ Tracking Lights for KSP v1.0
 		- Updated name from LaunchPadLamp mod to Tracking Lights
