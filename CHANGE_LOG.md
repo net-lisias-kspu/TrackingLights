@@ -1,5 +1,7 @@
 # Tracking Lights :: Change Log
 
+* 2020-0324: 0.0.2.1 (linuxgurugamer) for KSP 1.9.1
+	+ Fixed bad KIS patch in MM-KIS.cfg
 * 2020-0320: 0.0.2 (linuxgurugamer) for KSP 1.9.1
 	+ Adoption by Linuxgurugamer
 	+ Added AssemblyVerison.tt
