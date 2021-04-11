@@ -11,7 +11,7 @@ namespace LightTracker
 
 			try
 			{
-				KSPe.Util.Installation.Check<Startup>(typeof(Version));
+				KSPe.Util.Installation.Check<Startup>("LightTracker", "TrackingLights", null, true);
 			}
 			catch (KSPe.Util.InstallmentException e)
 			{
