@@ -7,3 +7,5 @@
 		- Updated models/textures
 		- Added new M.T.S. light intended to be used on launched vessels
 	+ Note:  This mod will not work with the old version of LaunchPadLamp and will break a save which used the old version of the mod.  Please remove any old version of LaunchPadLamp before installing this new version.
+* 2017-0927: Launch Pad Lamp 1.0 (Trolllception) for KSP 1.3
+	+ First release, under the older name. 
